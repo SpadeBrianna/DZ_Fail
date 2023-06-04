@@ -1,0 +1,101 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <cmath>
+#include<string>
+
+using namespace std;
+
+//2a
+/*
+int main() {
+    ifstream file("example.mp3", ios::in | ios::binary);
+
+    if (!file.is_open()) {
+        cerr << "Ошибка открытия файла" << endl;
+        return 1;
+    }
+
+    file.seekg(-128, ios::end);
+    char id3v1[128];
+    file.read(id3v1, 128);
+
+    if (strncmp(id3v1, "TAG", 3) == 0) {
+        string title(id3v1 + 3, 30);
+        string artist(id3v1 + 33, 30);
+        string album(id3v1 + 63, 30);
+
+        cout << "Название: " << title << endl;
+    } else {
+        cerr << "Блок ID3v1 не найден" << endl;
+    }
+
+    file.close();
+    return 0;
+}
+*/
+
+//3e
+/*
+int main() {
+    double x0, xn, h, C;
+    ifstream inFile("in.txt");
+    ofstream outFile("out.txt");
+    inFile >> x0 >> xn >> h >> C;
+
+    double x = x0;
+    while (x <= xn) {
+        double y = 0;
+        double term = -1.0 / 7 * x;
+        int n = 1;
+        while (abs(term) >= 1e-10) {
+            y += term;
+            term = -term * (n * C) / ((n + 1) * 7 * 8 * 9 * pow(x, 2));
+            n++;
+        }
+        outFile << x << "," << y << endl;
+        x += h;
+    }
+
+    inFile.close();
+    outFile.close();
+    return 0;
+}
+*/
+
+//4
+/*
+struct Student {
+  string surname;
+  double grade;
+  int course;
+};
+
+int main() {
+  const int MAX_STUDENTS = 100;
+  Student students[MAX_STUDENTS];
+  int count = 0;
+
+  ifstream file("students.txt");
+  if (!file) {
+    cerr << "Error opening file!" << endl;
+    return 1;
+  }
+
+  while (count < MAX_STUDENTS && file >> students[count].surname >> students[count].grade >> students[count].course) {
+    count++;
+  }
+
+  file.close();
+
+  for (int i = 0; i < count; i++) {
+    cout << "Student #" << i+1 << ": " << endl;
+    cout << "Surname: " << students[i].surname << endl;
+    cout << "Grade: " << students[i].grade << endl;
+    cout << "Course: " << students[i].course << endl;
+    cout << endl;
+  }
+
+  return 0;
+}
+*/
